@@ -4,7 +4,7 @@ class Undocker < Formula
   homepage "https://github.com/tokibi/undocker/"
   url "https://github.com/tokibi/undocker/releases/download/v0.1.1/undocker_0.1.1_darwin_amd64.tar.gz"
   version "0.1.1"
-  sha256 "c635267c36a646d1a7fef83269d94b86441d21d40b2dfdcb27b547e33ae33c1f"
+  sha256 "59ecd8732751dd8a0441cf4c718f64925ed0264c13b4e2125fcd37dd1350a196"
 
   def install
     bin.install "undocker"
