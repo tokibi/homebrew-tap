@@ -2,9 +2,18 @@
 class Undocker < Formula
   desc "a tool for decomposing docker images."
   homepage "https://github.com/tokibi/undocker/"
-  url "https://github.com/tokibi/undocker/releases/download/v0.1.7/undocker_0.1.7_darwin_amd64.tar.gz"
-  version "0.1.7"
-  sha256 "4987bf9baeb990f76e83359edd87bd0fe2565cd856274a4f99a2092b2ac90ee1"
+  version "0.1.9"
+  bottle :unneeded
+
+  if OS.mac?
+    url "https://github.com/tokibi/undocker/releases/download/v0.1.9/undocker_0.1.9_darwin_amd64.tar.gz"
+    sha256 "58be3cb98ec8c96c238433a73e89954ac7cc209a0e373d8541045225b60c874c"
+  elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/tokibi/undocker/releases/download/v0.1.9/undocker_0.1.9_linux_amd64.tar.gz"
+      sha256 "a600b0b899e9cc8530f9f2ed3ecd3b1eb4e0533d32a2c467f3c6ed8d32a4e345"
+    end
+  end
 
   def install
     bin.install "undocker"
